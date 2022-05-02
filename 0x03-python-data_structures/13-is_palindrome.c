@@ -35,7 +35,7 @@ int is_palindrome(listint_t **head)
 	}
 	i = 0;
 	j = length;
-	while (i <= j)
+	while (i < j)
 	{
 		if (top[i] != top[j])
 		{
