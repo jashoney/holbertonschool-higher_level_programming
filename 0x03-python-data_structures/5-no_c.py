@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def no_c(my_string):
     new_string = ""
     banned_list = ["c", "C"]
