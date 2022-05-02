@@ -25,15 +25,16 @@ int is_palindrome(listint_t **head)
 			break;
 		temp = temp->next;
 	}
+	length = length - 1;
 	temp = *head;
 	top = malloc(sizeof(*top) * length);
-	for (i = 0; i <= length - 1; i++)
+	for (i = 0; i <= length; i++)
 	{
 		top[i] = temp->n;
 		temp = temp->next;
 	}
 	i = 0;
-	j = length - 1;
+	j = length;
 	while (i <= j)
 	{
 		if (top[i] != top[j])
