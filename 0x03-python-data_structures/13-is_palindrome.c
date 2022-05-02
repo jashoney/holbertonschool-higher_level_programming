@@ -37,9 +37,13 @@ int is_palindrome(listint_t **head)
 	while (i <= j)
 	{
 		if (top[i] != top[j])
+		{
+			free(top);
 			return (0);
+		}
 		i++;
 		j--;
 	}
+	free(top);
 	return (1);
 }
