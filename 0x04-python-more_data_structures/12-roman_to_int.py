@@ -19,7 +19,7 @@ def roman_char(c):
     return 0
 
 
-def less_than_full_value(num):
+def less_than_full_value(num, sub):
     if num == 5:
         return 4
     elif num == 10:
@@ -31,14 +31,20 @@ def less_than_full_value(num):
     elif num == 500:
         return 400
     elif num == 1000:
-        return 900
+        if sub == 10:
+            return 990
+        else:
+            return 900
     else:
         return 0
 
 
 def roman_to_int(roman_string):
+
+    if roman_string is None:
+        return 0
     length = len(roman_string)
-    if length == 0 or roman_string is None:
+    if length == 0:
         return 0
 
     numlist = []
@@ -51,7 +57,7 @@ def roman_to_int(roman_string):
         if last_digit:
             if last_digit < i:
                 sum = sum - last_digit
-                sum = sum + less_than_full_value(i)
+                sum = sum + less_than_full_value(i, last_digit)
             else:
                 sum = sum + i
                 last_digit = i
