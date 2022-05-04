@@ -43,6 +43,9 @@ def roman_to_int(roman_string):
 
     if roman_string is None:
         return 0
+    if type(roman_string) != str:
+        return 0
+
     length = len(roman_string)
     if length == 0:
         return 0
