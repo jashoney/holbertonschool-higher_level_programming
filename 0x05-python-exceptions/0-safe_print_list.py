@@ -6,7 +6,7 @@ def safe_print_list(my_list=[], x=0):
         try:
             new_list.append(my_list[i])
             count = count + 1
-        except:
+        except IndexError:
             break
     print(*new_list, sep="")
     return (count)
