@@ -1,0 +1,78 @@
+Importing function from the module
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+
+Addition checks
+Test adding 2 numbers
+    >>> add_integer(2, 3)
+    5
+
+
+Test only inputting a
+    >>> add_integer(2)
+    100
+
+
+Test inputting a negative number
+    >>> add_integer(99, -2)
+    97
+
+
+Test inputting a float
+    >>> add_integer(100.3, -2)
+    98
+
+
+Test inputting two floats
+    >>> add_integer(-3.1, -4.6)
+    -7
+
+
+Error msgs
+Test inputting a int('char')
+    >>> add_integer(int('a'), int('z'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'a'
+
+
+Test inputting a string
+    >>> add_integer("school", 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+
+Test inputing None
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+
+Test inputting a string
+    >>> add_integer(1, "1")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+
+Test inputing more than 2 numbers
+    >>> add_integer(1, 2, 3, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+
+Documentation checks
+    module doc
+    >>> doc = __import__('0-add_integer').__doc__
+    >>> len(doc) > 0
+    True
+    
+
+
+    functions doc
+    >>> doc = __import__('0-add_integer').add_integer.__doc__
+    >>> len(doc) > 0
+    True

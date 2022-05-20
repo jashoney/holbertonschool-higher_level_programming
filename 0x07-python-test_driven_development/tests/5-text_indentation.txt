@@ -1,0 +1,49 @@
+Importing function from the module
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+blank check
+    >>> text_indentation("")
+
+     
+spaces check
+    >>> text_indentation("    hello.   my, name is test.   :")
+    hello.
+    <BLANKLINE>
+    my, name is test.
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+
+Error msgs
+Test inputting a float
+    >>> text_indentation(2.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+
+Test inputting a number
+
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+
+Test inputing None
+    >>> text_indentation(None)
+
+
+
+Documentation checks
+    module doc
+    >>> doc_mod = __import__('5-text_indentation').__doc__
+    >>> len(doc_mod) < 1
+    False
+
+
+    functions doc
+    >>> doc_fun = __import__('5-text_indentation').text_indentation.__doc__
+    >>> len(doc_fun) < 1
+    False
