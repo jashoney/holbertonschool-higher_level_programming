@@ -4,15 +4,15 @@
 
 
 def max_integer(list=[]):
-    """Function to find and return the max integer in a list of integers
-        If the list is empty, the function returns None
+    """Function finds and returns the largest integer in a list, 
+       none if empty
     """
     if len(list) == 0:
         return None
-    result = list[0]
+    largest = list[0]
     i = 1
     while i < len(list):
-        if list[i] > result:
-            result = list[i]
+        if list[i] > largest:
+            largest = list[i]
         i += 1
-    return result
+    return largest
