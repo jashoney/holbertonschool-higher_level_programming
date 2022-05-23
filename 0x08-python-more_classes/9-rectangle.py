@@ -12,14 +12,14 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ returns a Rectangle instance
-            with height, width = size
+            with both height, width = size
         """
         return cls(size, size)
 
     def __init__(self, width=0, height=0):
         """ instantiation """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
