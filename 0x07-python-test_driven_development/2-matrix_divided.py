@@ -12,8 +12,8 @@ def matrix_divided(matrix, div):
     """
 
     if div is None:
-        raise TypeError("matrix_divided() /
-                        missing 1 required positional argument: 'div'")
+        raise TypeError(
+            "matrix_divided() missing 1 required positional argument: 'div'")
 
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
@@ -22,12 +22,12 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     if matrix is None:
-        raise TypeError("matrix must be a matrix /
-                        (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of \
+integers/floats")
 
     if type(matrix) is not list:
-        raise TypeError("matrix must be a matrix /
-                        (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) of \
+integers/floats")
 
     rows = len(matrix)
     cols = len(matrix[0])
@@ -44,8 +44,8 @@ def matrix_divided(matrix, div):
         for j in range(cols):
             number = matrix[i][j]
             if type(number) is not int and type(number) is not float:
-                raise TypeError("matrix must be a matrix /
-                                (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix (list of lists) of \
+integers/floats")
             new_matrix[i][j] = round(number / div, 2)
 
     return new_matrix
