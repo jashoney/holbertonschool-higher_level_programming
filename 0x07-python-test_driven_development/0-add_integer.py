@@ -10,24 +10,18 @@ def add_integer(a, b=98):
     adds a to b, raises error
     if either not int or float
     """
+    print(type(a))
 
-    if a is None:
+    if (type(a) is not int and type(a) is not float):
         raise TypeError("a must be an integer")
 
-    if a == float('inf') or a == float('-inf'):
-        raise OverflowError("cannot convert float infinity to integer")
-
-    if b == float('inf') or b == float('-inf'):
-        raise OverflowError("cannot convert float infinity to integer")
-
-    if type(a) is not int and type(a) is not float:
-        raise TypeError("a must be an integer")
-    else:
+    if isinstance(a, float):
         a = int(a)
 
-    if type(b) is not int and type(b) is not float:
+    if not isinstance(b, int) and not isinstance(b, float):
         raise TypeError("b must be an integer")
-    else:
+
+    if isinstance(b, float):
         b = int(b)
 
-    return a + b
+    return (a + b)
