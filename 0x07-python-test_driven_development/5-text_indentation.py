@@ -4,6 +4,7 @@ prints text with newlines
 no spaces at the start of each newline
 """
 
+
 def text_indentation(text):
     """ prints text with newlines after a .? and : """
 
@@ -24,5 +25,5 @@ def text_indentation(text):
                     print(text[i], end="")
                 else:
                     if text[i] != " ":
-                       newline = False
-                       print(text[i], end="")
+                        newline = False
+                        print(text[i], end="")

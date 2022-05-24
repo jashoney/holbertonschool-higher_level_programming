@@ -4,14 +4,16 @@ function matrix_divided takes a matrix and divides
 each element by the variable div
 """
 
+
 def matrix_divided(matrix, div):
-    """ 
+    """
     divides a matrix by the number div
     element by element
     """
 
-    if div == None:
-        raise TypeError("matrix_divided() missing 1 required positional argument: 'div'")
+    if div is None:
+        raise TypeError("matrix_divided() /
+                        missing 1 required positional argument: 'div'")
 
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
@@ -19,8 +21,9 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    if matrix == None:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if matrix is None:
+        raise TypeError("matrix must be a matrix /
+                        (list of lists) of integers/floats")
 
     rows = len(matrix)
     cols = len(matrix[0])

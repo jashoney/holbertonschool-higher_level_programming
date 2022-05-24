@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-""" 
-0-add_integer module 
-adds 2 numbers and returns an int 
+"""
+0-add_integer module
+adds 2 numbers and returns an int
 """
 
+
 def add_integer(a, b=98):
-    """ 
-    adds a to b, raises error 
-    if either not int or float 
+    """
+    adds a to b, raises error
+    if either not int or float
     """
 
-    if a == None:
+    if a is None:
         raise TypeError("a must be an integer")
 
     if a == float('inf') or a == float('-inf'):

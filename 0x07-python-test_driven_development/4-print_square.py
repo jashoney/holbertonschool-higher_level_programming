@@ -4,10 +4,9 @@ prints a square '#'s
 """
 
 
-
 def print_square(size):
-    """ 
-    prints a square of size with #'s 
+    """
+    prints a square of size with #'s
     """
 
     if type(size) is not int:

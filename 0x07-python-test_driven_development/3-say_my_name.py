@@ -3,8 +3,9 @@
 contains a function to print say my name {name}
 """
 
+
 def say_my_name(first_name, last_name=""):
-    """ 
+    """
     prints a name
     in the form "say my name {first} {last}
     """
