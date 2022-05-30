@@ -1,0 +1,56 @@
+Importing function from the module
+    >>> bg = __import__('7-base_geometry').BaseGeometry
+
+Error Messages
+    >>> b = bg()
+    >>> b.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+    >>> b.integer_validator("width", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: width must be greater than 0
+
+    >>> b.integer_validator("width", -5)
+    Traceback (most recent call last):
+    ...
+    ValueError: width must be greater than 0
+
+    TypeError: complex must be an integer
+    >>> b.integer_validator("hello", "hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: hello must be an integer
+
+    >>> b.integer_validator("bool", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: bool must be an integer
+
+    >>> b.integer_validator("side")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> b.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> b.integer_validator("integer", 2, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Documentation checks
+    module doc
+    >>> doc_mod = __import__('7-base_geometry').__doc__
+    >>> len(doc_mod) > 3
+    True
+
+    functions doc
+    >>> doc_fun = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+    >>> len(doc_fun) > 3
+    True

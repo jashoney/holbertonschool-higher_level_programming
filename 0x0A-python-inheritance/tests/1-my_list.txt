@@ -1,51 +1,44 @@
 Importing function from the module
-    >>> my_list = __import__('1-my_list').my_list
+    >>> my_list = __import__('1-my_list').MyList
 
 list check
     >>> issubclass(my_list, list)
     True
 
 append check
-        >>> llst.append(1)
-	>>> llst.append(2)
-	>>> llst.append(3)
-	>>> llst.append(4)
-	>>> print(llst)
-	[1, 2, 3, 4]
+    >>> llst = my_list()  
+    >>> llst.append(1)
+    >>> llst.append(2)
+    >>> llst.append(3)
+    >>> llst.append(4)
+    >>> print(llst)
+    [1, 2, 3, 4]
 
 append then sort check
-	>>> llst = MyList()
-        >>> llst.append(3)
-	>>> llst.append(4)
-	>>> llst.append(2)
-	>>> llst.append(1)
-	>>> print(llst)
-	[3, 4, 2, 1]
-	>>> llst.print_sorted()
-	[1, 2, 3, 4]
-	>>> print(llst)
-	[3, 4, 2, 1]
+    >>> llst = my_list()
+    >>> llst.append(3)
+    >>> llst.append(4)
+    >>> llst.append(2)
+    >>> llst.append(1)
+    >>> print(llst)
+    [3, 4, 2, 1]
+    >>> llst.print_sorted()
+    [1, 2, 3, 4]
+    >>> print(llst)
+    [3, 4, 2, 1]
 
 append then sort check with negative numbers
-        >>> llst = MyList()
-        >>> llst.append(3)
-        >>> llst.append(4)
-        >>> llst.append(-2)
-        >>> llst.append(1)
-        >>> print(llst)
-        [3, 4, -2, 1]
-        >>> llst.print_sorted()
-        [-2, 1, 3, 4]
-        >>> print(llst)
-        [3, 4, -2, 1]
-
-
-Error Messages
-    >>> my_list.print_sorted(1)
-	Traceback (most recent call last):
-		...
-	TypeError: print_sorted() takes 1 positional argument but 2 were given
-
+    >>> llst = my_list()
+    >>> llst.append(3)
+    >>> llst.append(4)
+    >>> llst.append(-2)
+    >>> llst.append(1)
+    >>> print(llst)
+    [3, 4, -2, 1]
+    >>> llst.print_sorted()
+    [-2, 1, 3, 4]
+    >>> print(llst)
+    [3, 4, -2, 1]
 
 Documentation checks
     module doc
@@ -53,12 +46,12 @@ Documentation checks
     >>> len(doc_mod) > 3
     True
 
-
-    functions doc
-    >>> doc_fun = __import__('1-my_list').my_list.__doc__
-    >>> len(doc_fun) > 3
+    class doc
+    >>> doc_class = __import__('1-my_list').MyList.__doc__
+    >>> len(doc_class) > 3
     True
 
-    >>> doc_fun = len( __import__("1-my_list").my_list.print_sorted.__doc__
+    functions doc
+    >>> doc_fun =  __import__("1-my_list").MyList.print_sorted.__doc__
     >>> len(doc_fun) > 3
     True
