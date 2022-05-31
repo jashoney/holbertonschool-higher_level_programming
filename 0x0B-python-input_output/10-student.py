@@ -15,10 +15,10 @@ class Student:
         """ retrieves a dict representation of a Student instance
             filters with the attrs list if it is a list of dict keys
         """
-        if attrs is None:
+        if attrs is None or attrs == "":
             return self.__dict__
 
-        newlist = []
+        newdict = {}
         if type(attrs) is list:
             for i in range(len(attrs)):
                 if type(attrs[i]) != str:
@@ -27,6 +27,6 @@ class Student:
         for attr_key in attrs:
             for key, value in self.__dict__.items():
                 if key == attr_key:
-                    newlist.append(value)
+                    newdict[key] = value
 
-        return newlist
+        return newdict
