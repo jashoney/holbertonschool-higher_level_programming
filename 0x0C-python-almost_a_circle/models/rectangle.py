@@ -27,7 +27,7 @@ class Rectangle(Base):
             for count, arg in enumerate(args):
                 if count == 0:
                     self.id = arg
-                elif count == 1:    
+                elif count == 1:
                     self.width = arg
                 elif count == 2:
                     self.height = arg
@@ -50,7 +50,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """ overrides the __str__ method """
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}")
+        ms = "[Rectangle] "
+        ms += f"({self.id}) {self.__x}/{self.__y} "
+        ms += f"- {self.__width}/{self.__height}"
+        return ms
 
     def display(self):
         """ a public method that prints the instance
