@@ -58,7 +58,7 @@ class Rectangle(Base):
     def display(self):
         """ a public method that prints the instance
             using the # character in stdout
-            indents spaces x wide, y newlines before printing
+            indents blank spaces x wide, y newlines before printing
         """
         for y in range(self.__y):
             print()

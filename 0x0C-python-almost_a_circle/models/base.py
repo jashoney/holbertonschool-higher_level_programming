@@ -25,8 +25,8 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON string repr of the dict """
-        if list_dictionaries is None or list_dictionaries == []:
-            return []
+        if list_dictionaries is None:
+            list_dictionaries = []
         return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -40,32 +40,31 @@ class Base:
     def save_to_file(cls, list_objs):
         """ writes a JSON string repr to a file """
         myfile = cls.__name__ + ".json"
-        if list_objs is None:
-            mylist = []
-        else:
-            mylist = [obj.to_dictionary() for obj in list_objs]
+        mylist = []
+        if list_objs is not None:
+            for i in list_objs:
+                if issubclass(type(i), Base):
+                    mylist.append(cls.to_dictionary(i))
         with open(myfile, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(mylist))
 
     @classmethod
     def create(cls, **dictionary):
         """ returns a class instance with attrs set """
-        dummy = cls(1, 1, 1, 1)
+        dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
-        """loads from a json file
-        """
+        """loads from a json file """
         filename = cls.__name__ + ".json"
-        with open(filename, "r", encoding="utf-8") as f:
-            if f:
-                rfile = f.read()
-            else:
-                return []
         mylist = []
-        file_read_list = cls.from_json_string(rfile)
-        for i in file_read_list:
-            mylist.append(cls.create(**i))
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                if f:
+                    mylist = [cls.create(**obj) for obj in
+                              cls.from_json_string(f.read())]
+        except Exception:
+            pass
         return mylist
