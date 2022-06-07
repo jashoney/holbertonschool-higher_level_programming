@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -68,3 +69,22 @@ class Base:
         except Exception:
             pass
         return mylist
+
+@classmethod
+    def load_from_file_csv(cls):
+        """ loads a list of object from csv file """
+        filename = cls.__name__ + ".csv"
+        list_objs = []
+        try:
+            with open(filename, "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    attributename = ["id", "width", "height", "x", "y"]
+                if cls.__name__ == "Square":
+                    attributename = ["id", "size", "x", "y"]
+                dictreader = csv.DictReader(csvfile, fieldnames=attributename)
+                for item in dictreader:
+                    item = {k: int(v) for k, v in item.items()}
+                    list_objs.append(cls.create(**item))
+                return list_objs
+        except Exception:
+            return list_objs
