@@ -1,6 +1,7 @@
 #!/usr/bin/node
 // prints 3 lines to console
 
-console.log('C is fun');
-console.log('Python is cool');
-console.log('Javascript is amazing');
+const line1 = 'C is fun';
+const line2 = 'Python is cool';
+const line3 = 'Javascript is amazing';
+console.log(line1 + '\n' + line2 + '\n' + line3);
