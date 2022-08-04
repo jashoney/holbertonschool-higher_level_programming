@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     search_state = argv[4]
-    stateid = session.query(State).filter(State.name.like(search_state)).first()
+    stateid = session.query(State).filter(State.name.like(search_state))
     if stateid is None:
         print("Not found")
     else:
