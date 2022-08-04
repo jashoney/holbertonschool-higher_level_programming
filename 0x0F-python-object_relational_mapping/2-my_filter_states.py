@@ -7,20 +7,17 @@ import MySQLdb
 
 if __name__ == '__main__':
 
-    username = argv[1]
-    upasswd = argv[2]
-    sqldb = argv[3]
-    statewanted = argv[4]
+    s = argv[4]
 
     conn = MySQLdb.connect(
       host='localhost',
       port=3306,
-      user=username,
-      passwd=upasswd,
-      db=sqldb)
+      user=argv[1],
+      passwd=argv[2],
+      db=argv[3])
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name=statewanted ORDER BY id ASC")
+    cur.execute('SELECT * FROM states WHERE name=%s ORDER BY id ASC'.format(s))
 
     query_rows = cur.fetchall()
     for row in query_rows:
