@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" List all state in database """
+""" List all states in database started with N"""
 
 
 from sys import argv
@@ -27,3 +27,4 @@ if __name__ == '__main__':
 
     cur.close()
     conn.close()
+    

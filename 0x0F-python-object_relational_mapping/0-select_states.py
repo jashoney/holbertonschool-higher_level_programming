@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" List all state in database """
+""" List all the states in database """
 
 
 from sys import argv
 import MySQLdb
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     username = argv[1]
     upasswd = argv[2]
