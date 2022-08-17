@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" List all the states in database """
+""" List all states in database started with N"""
 
 
 from sys import argv
 import MySQLdb
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     username = argv[1]
     upasswd = argv[2]
@@ -19,7 +19,7 @@ if __name__ == "__main__":
       db=sqldb)
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     query_rows = cur.fetchall()
     for row in query_rows:
