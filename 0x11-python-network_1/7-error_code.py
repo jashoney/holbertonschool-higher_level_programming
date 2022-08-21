@@ -11,6 +11,6 @@ if __name__ == "__main__":
 
     the_page = requests.get(url)
     if the_page.status_code >= 400:
-        print('Error code: {}'.format(the_page.staus_code))
+        print('Error code: {}'.format(the_page.status_code))
     else:
         print(the_page.text)
