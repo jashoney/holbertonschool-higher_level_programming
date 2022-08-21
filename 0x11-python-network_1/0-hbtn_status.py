@@ -11,6 +11,6 @@ if __name__ == "__main__":
     with request.urlopen(url) as response:
         the_page = response.read()
     print("Body response:")
-    print(f"    - type: {type(the_page)}")
-    print(f"    - content: {the_page}")
-    print(f"    - utf8 content: {the_page.decode('utf-8')}")
+    print("/t- type: {}".format(the_page))
+    print("/t- content: {}".format(the_page))
+    print("/t- utf8 content: {}".format(the_page.decode('utf-8')))
