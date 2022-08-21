@@ -4,8 +4,11 @@
 
 if __name__ == "__main__":
     """ our main function """
+
     from urllib import request
+
     url = "https://intranet.hbtn.io/status"
+
     with request.urlopen(url) as response:
         the_page = response.read()
     print("Body response:")
