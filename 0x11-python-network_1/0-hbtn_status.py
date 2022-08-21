@@ -3,7 +3,6 @@
 
 
 if __name__ == "__main__":
-    """ our main function """
 
     from urllib import request
 
