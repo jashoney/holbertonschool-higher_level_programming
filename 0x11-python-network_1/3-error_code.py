@@ -14,4 +14,4 @@ if __name__ == "__main__":
             the_page = response.read().decode("utf-8")
         print(the_page)
     except error.HTTPError as e:
-        print('Error code: ', e.code)
+        print('Error code: {}'.format(e.code))
