@@ -3,11 +3,11 @@
 
 if __name__ == "__main__":
     """ our main function """
-    import requests
+    from requests import get
 
     url = "https://intranet.hbtn.io/status"
 
-    the_page = requests.get(url)
+    the_page = get(url)
     the_page = the_page.text
     print("Body response:")
     print("    type: {}".format(type(the_page)))
