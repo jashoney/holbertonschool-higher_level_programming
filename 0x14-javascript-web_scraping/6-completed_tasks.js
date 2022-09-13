@@ -3,7 +3,7 @@ const url = process.argv[2];
 const axios = require('axios');
 
 const dict = {};
-let count = 0
+let count = 0;
 
 axios.get(url)
   .then(function (response) {
